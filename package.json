@@ -1,0 +1,26 @@
+{
+  "name": "y",
+  "version": "1.0.0",
+  "description": "book record management",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nitheesh-Parkala/Book-Record-Management-System.git"
+  },
+  "author": "Nitheesh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Nitheesh-Parkala/Book-Record-Management-System/issues"
+  },
+  "homepage": "https://github.com/Nitheesh-Parkala/Book-Record-Management-System#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  }
+}
