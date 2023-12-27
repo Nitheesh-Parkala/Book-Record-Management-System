@@ -72,5 +72,6 @@ exports.addNewBook = async (req,res)=>{
         data: allBooks
     })
 }
+
 //instead of writing  particular export statement like..
-module.exports = {getAllBooks,getSingleBookById}
+// module.exports = {getAllBooks,getSingleBookById}
