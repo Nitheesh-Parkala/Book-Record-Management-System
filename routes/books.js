@@ -4,7 +4,7 @@ const express = require("express");
 const {books}= require("../data/books.json");
 const {users} = require("../data/users.json");
 const {UserModel,BookModels}= require("../models")
-const {getAllBooks, getSingleBookById, getAllIssuedBooks, addNewBook} = require("../controllers/book-controller")
+const {getAllBooks, getSingleBookById, getAllIssuedBooks, addNewBook, updateBookById} = require("../controllers/book-controller")
 
 const router = express.Router();
 
@@ -118,29 +118,29 @@ router.post("/",addNewBook)
  * Access: Public
  * Parameters: Id
  */
-router.put("/:id",(req,res)=>{
-    const{id}= req.params;
-    const{data}= req.body;
-    const book = books.find((each)=>each.id === id);
-    if(!book){
-        return res.status(200).json({
-            success: false,
-            message: "Books not found"
-        })
-    }
-      const updatedBook = books.map((each)=>{
-        if(each.id===id){
-            return {
-                ...each,
-                ...data
-            };
-        }
-        return each
-    })
-    return res.status(200).json({
-        success: true,
-        data: updatedBook
-    })
-})
-
+// router.put("/:id",(req,res)=>{
+//     const{id}= req.params;
+//     const{data}= req.body;
+//     const book = books.find((each)=>each.id === id);
+//     if(!book){
+//         return res.status(200).json({
+//             success: false,
+//             message: "Books not found"
+//         })
+//     }
+//       const updatedBook = books.map((each)=>{
+//         if(each.id===id){
+//             return {
+//                 ...each,
+//                 ...data
+//             };
+//         }
+//         return each
+//     })
+//     return res.status(200).json({
+//         success: true,
+//         data: updatedBook
+//     })
+// })
+router.put("/:id",updateBookById)
 module.exports = router;

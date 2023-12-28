@@ -73,5 +73,16 @@ exports.addNewBook = async (req,res)=>{
     })
 }
 
+exports.updateBookById = async (req,res)=>{
+    const {id}= req.params;
+    const {data}= req.body;
+    const updateBook = await BookModel.findOneAndUpdate({_id : id},data,{
+        new:true,
+    })
+ return res.status(200).json({
+    success: true,
+    data: updatedBook,
+  });
+};
 //instead of writing  particular export statement like..
 // module.exports = {getAllBooks,getSingleBookById}
